@@ -41,10 +41,9 @@ public class AlexTest {
 
     // кол-во котят у Алекса должно быть 0
     @Test
-    public void getKittensShouldReturnZero() throws Exception {
+    public void getKittensShouldReturnZeroTest() throws Exception {
 
         Alex alex = spy(new Alex("Самец", feline));
-        // Mockito.when(alex.getKittens()).thenReturn(0);
         int expectedCountOfAlexKittens = 0;
         int actualCountOfAlexKittens = alex.getKittens();
         assertEquals("Количество котят должно быть 0, но возвращается " + actualCountOfAlexKittens,

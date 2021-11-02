@@ -20,10 +20,6 @@ public class Lion extends Feline {
         this.feline = feline;
     }
 
-    public Lion(Feline feline) {
-        this.feline = feline;
-    }
-
     public int getKittens() {
         return feline.getKittens();
     }

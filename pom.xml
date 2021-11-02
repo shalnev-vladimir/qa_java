@@ -34,12 +34,6 @@
             <!--Тег scope указывает на область видимости зависимости: она видна только тестовым классам в директории src/test/java-->
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>LATEST</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>

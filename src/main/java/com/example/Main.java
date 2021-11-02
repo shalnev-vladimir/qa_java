@@ -6,6 +6,7 @@ public class Main {
         Feline feline = new Feline();
         Lion lion = new Lion("Самец", feline);
         Alex alex = new Alex("Самец", feline);
+        Cat cat = new Cat(feline);
 
         lion.getKittens();
         lion.doesHaveMane();
@@ -14,6 +15,8 @@ public class Main {
         alex.getKittens();
         alex.doesHaveMane();
         alex.getFood();
+
+        cat.getFood();
     }
 }
 

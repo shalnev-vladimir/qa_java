@@ -27,7 +27,7 @@ public class AnimalGetFoodListPositiveWithParametersTest {
     }
 
     @Test
-    public void shouldBeLionMale() throws Exception {
+    public void plantEatingShouldEatPlantPredatorsShouldEatMeatTest() throws Exception {
 
         Animal animal = new Animal();
         List<String> actualFoodList= animal.getFood(animalKind);

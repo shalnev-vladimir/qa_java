@@ -6,13 +6,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class LionPositiveTestsWithParameters {
+public class LionPositiveWithParametersTest {
 
     String sex;
     boolean expected;
     Feline feline;
 
-    public LionPositiveTestsWithParameters(String sex, boolean expected) {
+    public LionPositiveWithParametersTest(String sex, boolean expected) {
         this.sex = sex;
         this.expected = expected;
     }
@@ -26,7 +26,7 @@ public class LionPositiveTestsWithParameters {
     }
 
     @Test
-    public void shouldBeLionMale() throws Exception {
+    public void maleLionShouldHaveManeFemaleLionShouldNotHaveManeTest() throws Exception {
 
         Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();

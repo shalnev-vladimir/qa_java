@@ -6,7 +6,7 @@ import org.junit.Test;
 public class AnimalTest {
 
     @Test(expected = Exception.class)
-    public void animalTestShouldReturnException() throws Exception {
+    public void animalTestShouldReturnExceptionTest() throws Exception {
         Animal animal = new Animal();
         animal.getFood("");
     }
