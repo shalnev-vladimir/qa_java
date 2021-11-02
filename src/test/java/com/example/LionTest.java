@@ -15,7 +15,7 @@ import static org.mockito.Mockito.spy;
 public class LionTest {
 
     @Mock
-    Feline feline; // создали мок
+    Feline feline; //  создали мок
 
     // Проверяет метод doesHaveMane. У "самки" не должно быть гривы.
     @Test
