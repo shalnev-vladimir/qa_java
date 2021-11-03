@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FelineTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco.exec</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">FelineTest.java</span></div><h1>FelineTest.java</h1><pre class="source lang-java linenums">package com.example;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import java.util.List;
+
+import static org.mockito.Mockito.spy;
+
+@RunWith(MockitoJUnitRunner.class)
+<span class="fc" id="L15">public class FelineTest {</span>
+
+    @Mock
+    Feline feline;
+<span class="fc" id="L19">    List&lt;String&gt; expectedFoodList = List.of(&quot;Животные&quot;, &quot;Птицы&quot;, &quot;Рыба&quot;); // ожидаемый список</span>
+<span class="fc" id="L20">    String expectedFamilyName = &quot;Кошачьи&quot;;</span>
+<span class="fc" id="L21">    int numberOfKittens = 1;</span>
+
+    @Test
+    public void eatMeatReturnsFoodListTest() throws Exception {
+
+<span class="fc" id="L26">        Feline feline = spy(new Feline());</span>
+<span class="fc" id="L27">        Mockito.when(feline.getFood(&quot;Хищник&quot;)).thenReturn(expectedFoodList);</span>
+<span class="fc" id="L28">        List&lt;String&gt; actualFoodList = feline.eatMeat();</span>
+<span class="fc" id="L29">        Assert.assertEquals(&quot;Ожидается список 'Животные, Птицы, Рыба', но возвращается&quot; + feline.eatMeat(),</span>
+                expectedFoodList, actualFoodList);
+<span class="fc" id="L31">    }</span>
+
+    @Test
+    public void getFamilyReturnsFamilyNameTest() {
+
+<span class="fc" id="L36">        Feline feline = new Feline();</span>
+<span class="fc" id="L37">        Assert.assertEquals(&quot;Название должно быть 'Кошачьи', но фактически&quot; + feline.getFamily(),</span>
+<span class="fc" id="L38">                expectedFamilyName, feline.getFamily());</span>
+<span class="fc" id="L39">    }</span>
+
+    @Test
+    public void getKittensReturnsKittensCountTest() {
+
+<span class="fc" id="L44">        Feline feline = new Feline();</span>
+<span class="fc" id="L45">        Assert.assertEquals(&quot;Количество котят должно равняться 1, но равняется&quot; + feline.getKittens(),</span>
+<span class="fc" id="L46">                numberOfKittens, feline.getKittens());</span>
+<span class="fc" id="L47">    }</span>
+
+    @Test
+    public void getKittensMethodWithParametersTest() {
+
+<span class="fc" id="L52">        Feline feline = new Feline();</span>
+<span class="fc" id="L53">        Assert.assertEquals(&quot;Количество котят должно равняться единице&quot;,</span>
+<span class="fc" id="L54">                numberOfKittens, feline.getKittens(1));</span>
+<span class="fc" id="L55">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

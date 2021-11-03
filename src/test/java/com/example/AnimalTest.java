@@ -5,11 +5,14 @@ import org.junit.Test;
 
 public class AnimalTest {
 
-    @Test(expected = Exception.class)
-    public void animalTestShouldReturnExceptionTest() throws Exception {
+    @Test
+    public void animalTestShouldReturnExceptionTest(){
         Animal animal = new Animal();
-        animal.getFood("");
+        Exception exception = Assert.assertThrows(Exception.class, () -> animal.getFood("12"));
+        Assert.assertEquals("Неизвестный вид животного, используйте значение Травоядное или Хищник",
+                exception.getMessage());
     }
+
 
     @Test
     public void getFamilyAnimalTest() {

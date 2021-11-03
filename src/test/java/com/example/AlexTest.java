@@ -2,7 +2,6 @@ package com.example;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.spy;
 
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -43,7 +42,7 @@ public class AlexTest {
     @Test
     public void getKittensShouldReturnZeroTest() throws Exception {
 
-        Alex alex = spy(new Alex("Самец", feline));
+        Alex alex = new Alex("Самец", feline);
         int expectedCountOfAlexKittens = 0;
         int actualCountOfAlexKittens = alex.getKittens();
         assertEquals("Количество котят должно быть 0, но возвращается " + actualCountOfAlexKittens,

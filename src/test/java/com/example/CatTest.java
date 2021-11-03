@@ -18,7 +18,7 @@ public class CatTest {
     @Test
     public void shouldBeMeowTest() {
 
-        Cat cat = new Cat(this.feline);
+        Cat cat = new Cat(feline);
         String actualSound = cat.getSound();
         String expectedSound = "Мяу";
         Assert.assertEquals("Кот должен говорить 'Мяу', но говорит " + actualSound, expectedSound, actualSound);
